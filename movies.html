@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>American Movies</title>
+  <script src="movies.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,500;1,900&display=swap" rel="stylesheet"> 
+  
+  
+  <style>
+
+    #movieTable, th, td  {
+        border: 1px solid skyblue;
+        font-family: 'Alegreya', serif;
+        font-size: small; 
+        margin-left: auto; 
+        margin-right: auto;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 30px;
+        margin-top: 20px;
+        table-layout: fixed;
+        width: 60%;
+        text-align: center;
+    }
+    #movieTable th:nth-child(1) { width: 10%; font-size: medium;}
+    #movieTable th:nth-child(2) { width: 45%; font-size: medium;}
+    #movieTable th:nth-child(3) { width: 15%; font-size: medium;}
+    #movieTable th:nth-child(4) { width: 30%; font-size: medium;}
+
+    a{
+      color: hotpink;
+    }
+
+    .filter-container {
+      display: flex;
+      font-family: 'Alegreya', serif;
+      justify-content: center;
+      margin-bottom: 10px;
+      margin-top: 82px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    #pageNation{
+      display: flex; 
+      font-family: 'Alegreya', serif;
+      justify-content: center;
+      margin-bottom: 50px;
+    }
+
+    .center{
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      font-family: 'Alegreya', serif;
+      margin-bottom: 30px;
+    }
+
+
+    h1{
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      font-family: 'Alegreya', serif;
+      margin-top: 50px; 
+      line-height: 0;
+      }
+
+    h2 {
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      font-family: 'Alegreya', serif;
+    }
+
+
+    .bold {
+      font-weight: 900;
+      font-style: italic;
+    }
+    .medium {
+      font-weight: 500;
+    }
+
+    body {
+      padding: 25px;
+      background-color: white;
+      color: black;
+    }
+
+    .dark-mode {
+      background-color: black;
+      color: white;
+    }
+
+    #button-14 {
+      position: absolute;
+      right: 50%;
+      background-image: linear-gradient(#f7f8fa ,#e7e9ec);
+      border-color: #adb1b8 #a2a6ac #8d9096;
+      border-style: solid;
+      border-width: 1px;
+      border-radius: 3px;
+      box-shadow: rgba(255,255,255,.6) 0 1px 0 inset;
+      box-sizing: border-box;
+      color: #0f1111;
+      cursor: pointer;
+      display: inline-block;
+      font-family: "Amazon Ember",Arial,sans-serif;
+      font-size: 17px;
+      height: 25px;
+      outline: 0;
+      overflow: hidden;
+      padding: 0 11px;
+      text-align: center;
+      text-decoration: none;
+      text-overflow: ellipsis;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation
+} 
+
+</style>
+</head>
+
+<body>
+  
+  <h1 class = "bold">🇺🇸 American Movies 🎥</h1>
+  <h2 class = "medium">A database of American movies released since 1900</h2>
+
+  <button id="button-14" onclick="darkmode()">🌑</button>
+
+  
+  <div class="filter-container">
+  <label for="selectYearStart">Select a start year:</label>
+  <select id="selectYearStart">
+  <!-- Insert years as options here -->
+  </select>
+  <label for="selectYearEnd">Select an end year:  </label>
+  <select id="selectYearEnd">
+  <!-- Insert years as options here -->
+  </select>
+  <label for="selectGenre">Select a genre:  </label>
+  <select id="selectGenre">
+  <!-- Insert genres as options here -->
+   </select>
+
+  <label for="inputTitle">Titles: </label>
+  <input type="text" id="inputTitle" onkeyup="searchTitle()" placeholder="Search for titles.." >
+
+  <label for="inputCast">Casts: </label>
+  <input type="text" id="inputCast" onkeyup="searchCast()" placeholder="Search for casts.." >
+</div>
+ 
+    <table id="movieTable">
+      <thead> 
+        <tr>
+          <th>Year</th>
+          <th>Title</th>
+          <th>Genres</th>
+          <th>Cast</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          
+        </tr>
+      </tbody>
+    </table>
+
+<div class="center">
+<div id="pageNation"></div>
+</div>
+
+</body>
+</html>
